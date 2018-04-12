@@ -1,0 +1,51 @@
+	/* Main styles. 
+ * 4/11/2018
+ * ============================================
+ * 01. Fonts
+ * 02. Base styles
+ * 03. Section styles
+ * ============================================
+ */
+
+/* 01. Fonts */
+/* @import url("fonts.css"); */
+
+/* 02. Base styles */
+html {
+	font-size: 10px;
+}
+
+html, body {
+	height: 100%;
+}
+
+/* 03. Section styles */
+.main-title-1   {
+	font-size: 2.5rem;
+	line-height: 100%;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	color: #FF7F00;
+	text-align: center;
+	text-shadow: 2px 2px 4px white;
+}
+
+.main-title-2   {
+	font-size: 7rem;
+	line-height: 100%;
+	letter-spacing: .2rem;
+	color: black;
+	text-align: center;
+	text-shadow: 4px 4px 4px white;
+}
+
+@media screen and (min-width: 768px) {
+	.main-title-1   {
+		font-size: 4.5rem;
+	}
+	
+	.main-title-2   {
+		margin-top: 3rem;
+		font-size: 12rem;
+	}
+}
