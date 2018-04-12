@@ -20,6 +20,14 @@ html, body {
 	height: 100%;
 }
 
+.bg-1 {
+	height: auto;
+	width: auto;
+	background-image: url("../images/bg1.png");
+	background-color: #F6F6F6;
+	margin: 0 auto;
+}
+
 /* 03. Section styles */
 header {
 	text-align: center; 
@@ -62,6 +70,8 @@ main p {
 	letter-spacing: .1rem;
 	color: black;
 	text-align: center;
+	margin-left: 1.3rem;
+	margin-right: 1.3rem;
 }
 
 footer{
