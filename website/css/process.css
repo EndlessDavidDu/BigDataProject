@@ -1,5 +1,4 @@
-	/* Main styles. 
- * 4/11/2018
+/* Main styles. 
  * ============================================
  * 01. Fonts
  * 02. Base styles
@@ -43,7 +42,7 @@ header {
 }
 
 header a {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	line-height: 100%;
 	letter-spacing: .2rem;
 	color: black;
@@ -107,7 +106,7 @@ footer p {
 
 /* 04. Specific fonts */
 .main-title-1   {
-	font-size: 3.5rem;
+	font-size: 2.5rem;
 	line-height: 100%;
 	text-transform: uppercase;
 	letter-spacing: .2rem;
@@ -133,5 +132,9 @@ footer p {
 	.main-title-2   {
 		margin-top: 3rem;
 		font-size: 12rem;
+	}
+	
+	header a {
+		font-size: 2.5rem;
 	}
 }
