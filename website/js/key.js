@@ -30,3 +30,7 @@ function test() {
 	alert(GetQuery("key1"));
 	alert(GetQuery("key2"));
 }
+
+var hashtag1 = GetQuery("key1");
+var hashtag2 = GetQuery("key2");
+var maxResults = 1000;
