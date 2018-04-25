@@ -19,7 +19,7 @@ request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth('yadu3240@colorado.ed
 ## Testing output
 print request_Result1.content
 print ('==================')
-print request_Result1.content
+print request_Result2.content
 
 ## Saving as JSON
 with open('First_key.json', 'w') as outfile:
