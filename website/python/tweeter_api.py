@@ -1,10 +1,13 @@
+#!/usr/bin/python
+
+import sys
 import requests
 import json
 from requests.auth import HTTPBasicAuth
 
 ## Request thru GNIP API
-hashtag1 = raw_input("1st keyword for hashtag: \n")
-hashtag2 = raw_input("2nd keyword for hashtag: \n")
+hashtag1 = sys.argv[1] #raw_input("1st keyword for hashtag: \n")
+hashtag2 = sys.argv[2] #raw_input("2nd keyword for hashtag: \n")
 maxResults = raw_input("maxResults: \n")
 fromDate = raw_input("From the date (YYYYMMDDHHMM/201804100000) :\n")
 toDate = raw_input("To the date (YYYYMMDDHHMM/201804150000) :\n")

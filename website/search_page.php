@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
 <html lang="en">
 <head>
 <!-- Basic info
@@ -36,6 +33,13 @@
 <main>
 	<center>
 	<p>Processing... Please Wait... </p>
+	<?php
+		$key1 = $_REQUEST['key1'];
+		$key2 = $_REQUEST['key2'];
+		echo 'Your keywords are "' . $key1 .'" and "' . $key2 . '". ';
+		exec ("/python/tweeter_api.py $key1 $key2");
+		
+	?>
 	</center>
 </main>
 
