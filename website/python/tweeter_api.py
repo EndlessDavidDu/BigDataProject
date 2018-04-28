@@ -8,9 +8,9 @@ from requests.auth import HTTPBasicAuth
 ## Request thru GNIP API
 hashtag1 = sys.argv[1] #raw_input("1st keyword for hashtag: \n")
 hashtag2 = sys.argv[2] #raw_input("2nd keyword for hashtag: \n")
-maxResults = raw_input("maxResults: \n")
-fromDate = raw_input("From the date (YYYYMMDDHHMM/201804100000) :\n")
-toDate = raw_input("To the date (YYYYMMDDHHMM/201804150000) :\n")
+maxResults = sys.argv[3] #raw_input("maxResults: \n")
+fromDate = sys.argv[4] #raw_input("From the date (YYYYMMDDHHMM/201804100000) :\n")
+toDate = sys.argv[5] #raw_input("To the date (YYYYMMDDHHMM/201804150000) :\n")
 
 Fir_url = 'https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query='+hashtag1+'&maxResults='+maxResults+'&fromDate='+fromDate+'&toDate='+toDate
 Sec_url = 'https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query='+hashtag2+'&maxResults='+maxResults+'&fromDate='+fromDate+'&toDate='+toDate
