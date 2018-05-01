@@ -14,6 +14,7 @@ maxResults = '500'
 now = datetime.date.today()
 HH = '00'
 MM = '00'
+toMM = '09'
 limit = 7
 count = 0
 f1 = open('First_key.json', 'a+')
@@ -35,8 +36,8 @@ for x in range(0, 7):
             HH = str(hh)
             
         for z in range(0, 6):
-            Fir_url = ('https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query='+hashtag1+'&maxResults='+maxResults+'&fromDate='+request_Date+HH+MM+'&toDate='+request_Date+'2359')
-            Sec_url = ('https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query='+hashtag2+'&maxResults='+maxResults+'&fromDate='+request_Date+HH+MM+'&toDate='+request_Date+'2359')
+            Fir_url = ('https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query='+hashtag1+'&maxResults='+maxResults+'&fromDate='+request_Date+HH+MM+'&toDate='+request_Date+HH+toMM)
+            Sec_url = ('https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query='+hashtag2+'&maxResults='+maxResults+'&fromDate='+request_Date+HH+MM+'&toDate='+request_Date+HH+toMM)
             ## Getting info
             request_Result1 = requests.get(Fir_url, auth=HTTPBasicAuth('yadu3240@colorado.edu', '!gty19970721')).text
             request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth('yadu3240@colorado.edu', '!gty19970721')).text
@@ -46,8 +47,11 @@ for x in range(0, 7):
             count = count + 2
             print(count)
             mm = int(MM) + 10
+            tomm = int(toMM) + 10
             MM = str(mm)
+            toMM = str(tomm)
         MM = '00'      
+        toMM = '09'
     HH = '00'
 
 f1.close()
