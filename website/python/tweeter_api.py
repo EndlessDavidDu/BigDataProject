@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import sys
+import os
 import datetime
 import requests
 import json
@@ -17,6 +18,9 @@ MM = '00'
 toMM = '09'
 limit = 7
 count = 0
+
+os.remove("First_key.json")
+os.remove("Second_key.json")
 f1 = open('First_key.json', 'a+')
 f2 = open('Second_key.json', 'a+')
 
