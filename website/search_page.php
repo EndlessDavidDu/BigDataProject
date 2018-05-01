@@ -37,7 +37,7 @@
 		$key1 = $_REQUEST['key1'];
 		$key2 = $_REQUEST['key2'];
 		echo 'Your keywords are "' . $key1 .'" and "' . $key2 . '". ';
-		exec ("/python/tweeter_api.py $key1 $key2");
+		exec ('/python/tweeter_api.py $key1 $key2');
 		
 	?>
 	</center>
