@@ -62,10 +62,10 @@ for x in range(0, 7):
 
             #firset.insert(request_Result1.json())
             #secset.insert(request_Result2.json())
-			data = json_util.loads(request_Result1.read())
-			firset.insert_many(data)
-			data = json_util.loads(request_Result2.read())
-			secset.insert_many(data)
+            data = json_util.loads(request_Result1.read())
+            firset.insert_many(data)
+            data = json_util.loads(request_Result2.read())
+            secset.insert_many(data)
 
             count = count + 2
             print(count)
