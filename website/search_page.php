@@ -22,7 +22,7 @@
 
 <header>
 	<div class="row">
-		<div class="main-title-1"><b>Hot Spot Analysis Tool</b></div>
+		<div class="main-title-1"><b>Difference Amplifier</b> <img src="images/logo1.png" alt="logo" style="width: 3.5rem;height:3.5rem;"> </div>
 		<div class="item row">
 			<a href="index.html"><b>home</b></a>
 			<a href="mailto: siso8575@colorado.edu" target="_top"><b>contact us</b></a>
@@ -31,16 +31,16 @@
 </header>
 
 <main>
-	<center>
-	<p>Processing... Please Wait... </p>
-	<?php
-		$key1 = $_REQUEST['key1'];
-		$key2 = $_REQUEST['key2'];
-		echo 'Your keywords are "' . $key1 .'" and "' . $key2 . '". ';
-		exec ('/python/tweeter_api.py $key1 $key2');
-		
-	?>
-	</center>
+        <center>
+        <p>Processing... Please Wait... </p >
+        <?php
+                $key1 = $_REQUEST['key1'];
+                $key2 = $_REQUEST['key2'];
+                echo 'Your keywords are "' . $key1 .'" and "' . $key2 . '". ';
+                $val = shell_exec("python ./python/tweeter_api.py $key1 $key2");
+                echo $val;
+        ?>
+        </center>
 </main>
 
 <footer>
