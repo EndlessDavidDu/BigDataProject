@@ -33,4 +33,4 @@ function test() {
 
 var hashtag1 = GetQuery("key1");
 var hashtag2 = GetQuery("key2");
-var maxResults = 1000;
+var maxResults = 500;
