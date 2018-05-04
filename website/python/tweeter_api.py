@@ -43,23 +43,17 @@ for x in range(0, 7):
             str(temp_date.month) + str(temp_date.day)
 
     for y in range(0, 24):
-        hh = int(HH) + 1
-        if (hh < 10):
-            HH = '0' + str(hh)
-        else:
-            HH = str(hh)
-            
-		for z in range(0, 6):
+        for z in range(0, 6):
             Fir_url = ('https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query=' + hashtag1 +
                        '&maxResults=' + maxResults + '&fromDate=' + request_Date + HH + MM + '&toDate=' + request_Date + HH + toMM)
             Sec_url = ('https://gnip-api.twitter.com/search/fullarchive/accounts/greg-students/prod.json?query=' + hashtag2 +
                        '&maxResults=' + maxResults + '&fromDate=' + request_Date + HH + MM + '&toDate=' + request_Date + HH + toMM)
             # Getting info
-            request_Result1 = requests.get(Fir_url, auth=HTTPBasicAuth(
-                'yadu3240@colorado.edu', '!gty19970721'))
-            request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth(
-                'yadu3240@colorado.edu', '!gty19970721'))
-
+            request_Result1 = requests.get(Fir_url, auth=HTTPBasicAuth('yadu3240@colorado.edu', '!gty19970721'))
+            count = count + 1
+            request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth('yadu3240@colorado.edu', '!gty19970721'))
+            count = count + 1
+            
             #firset.insert(request_Result1.json())
             #secset.insert(request_Result2.json())
             data = json_util.loads(request_Result1.read())
@@ -67,12 +61,16 @@ for x in range(0, 7):
             data = json_util.loads(request_Result2.read())
             secset.insert_many(data)
 
-            count = count + 2
             print(count)
             mm = int(MM) + 10
             tomm = int(toMM) + 10
             MM = str(mm)
             toMM = str(tomm)
+        hh = int(HH) + 1
+        if (hh < 10):
+            HH = '0' + str(hh)
+        else:
+            HH = str(hh)
         MM = '00'
         toMM = '09'
     HH = '00'
