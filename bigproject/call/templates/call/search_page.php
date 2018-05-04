@@ -1,27 +1,24 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
 <html lang="en">
 <head>
 <!-- Basic info
 ================================================== -->
 <meta charset="utf-8">
 <title>Difference Amplifier </title>
-<meta name="description" content="Bigdata Project">
+<meta name="description" content="Processing">
 <!-- favicons
 ================================================== -->
 <link rel="icon" type="image/png" href="favicon.png">
 <!--- CSS
 ================================================== -->
-<link rel="stylesheet" href="../../static/css/main.css">
+<link rel="stylesheet" href="../../static/css/process.css">
 
 <!-- mobile specific metas
 ================================================== -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="bg-1">
+<body class="bg-1" onload="Getkey()">
 
 <header>
 	<div class="row">
@@ -34,19 +31,16 @@
 </header>
 
 <main>
-	<p>To obtain a comparison, please input two keywords below. </p>
-	<p>(E.g. "Coke" and "Pepsi".) </p>
-	<br>
-	<form action=secondpage method="post" style="text-align: center; font-size: 1.8rem;">
-		{% csrf_token%}
-		The First Keyword:<br>
-		<input type="text" name="key1" value="Coke">
-		<br><br>
-		The Second Keyword:<br>
-		<input type="text" name="key2" value="Pepsi">
-		<br><br>
-		<input type="submit" value="Generate the comparison">
-		</form>
+        <center>
+        <p>Processing... Please Wait... </p >
+        <?php
+                $key1 = $_REQUEST['key1'];
+                $key2 = $_REQUEST['key2'];
+                echo 'Your keywords are "' . $key1 .'" and "' . $key2 . '". ';
+                $val = shell_exec("python ./python/tweeter_api.py $key1 $key2");
+                echo $val;
+        ?>
+        </center>
 </main>
 
 <footer>
@@ -58,7 +52,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- JavaScript-->
-
+<script src="js/key.js"></script>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

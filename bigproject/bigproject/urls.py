@@ -17,10 +17,11 @@ from django.urls import path
 from django.conf.urls import url
 from django.contrib import admin
 
-from bigproject import views as bigproject_views
+from call import views
 
 
 urlpatterns = [
     url(r'^admin/',admin.site.urls),
-    url(r'^$',bigproject_views.index,name="index"),
+    url(r'^$',views.index,name="index"),
+    url(r'^secondpage',views.secondpage,name="secondpage")
 ]

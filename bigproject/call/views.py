@@ -9,4 +9,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request,'call/index.html')
+
+def secondpage(request):
+    return render(request,'call/search_page.php')
