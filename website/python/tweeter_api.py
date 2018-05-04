@@ -6,7 +6,6 @@ import requests
 import json
 from requests.auth import HTTPBasicAuth
 from pymongo import MongoClient
-from bson import json_util
 
 conn = MongoClient('localhost', 27017)
 db = conn.data_from_tweeter
@@ -14,8 +13,8 @@ firset = db.fir
 secset = db.sec
 
 # Request thru GNIP API
-hashtag1 = '2'#sys.argv[1]
-hashtag2 = '3'#sys.argv[2]
+hashtag1 = sys.argv[1]
+hashtag2 = sys.argv[2]
 maxResults = '500'
 #print hashtag1
 #print hashtag2
@@ -54,8 +53,8 @@ for x in range(0, 7):
             request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth('yadu3240@colorado.edu', '!gty19970721'))
             count = count + 1
             
-            firset.insert(request_Result1.json())
-            secset.insert(request_Result2.json())
+            firset.insert_one(request_Result1.json())
+            secset.insert_one(request_Result2.json())
 
             print(count)
             mm = int(MM) + 10
