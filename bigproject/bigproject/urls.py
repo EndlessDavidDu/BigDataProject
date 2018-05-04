@@ -21,5 +21,6 @@ from bigproject import views as bigproject_views
 
 
 urlpatterns = [
+    url(r'^admin/',admin.site.urls),
     url(r'^$',bigproject_views.index,name="index"),
 ]
