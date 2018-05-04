@@ -1,12 +1,71 @@
-{% load static-files }
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <p>this is working</p>
-  </body>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
+<head>
+<!-- Basic info
+================================================== -->
+<meta charset="utf-8"> 
+<title>Difference Amplifier </title>
+<meta name="description" content="Bigdata Project">  
+<!-- favicons
+================================================== -->
+<link rel="icon" type="image/png" href="favicon.png">
+<!--- CSS
+================================================== -->
+<link rel="stylesheet" href="css/main.css">
+
+<!-- mobile specific metas
+================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body class="bg-1">
+
+<header>
+	<div class="row">
+		<div class="main-title-1"><b>Difference Amplifier</b> <img src="images/logo1.png" alt="logo" style="width: 3.5rem;height:3.5rem;"> </div>
+		<div class="item row">
+			<a href="index.html"><b>home</b></a>
+			<a href="mailto: siso8575@colorado.edu" target="_top"><b>contact us</b></a>
+		</div>
+	</div>
+</header>
+
+<main>
+	<p>To obtain a comparison, please input two keywords below. </p>
+	<p>(E.g. "Coke" and "Pepsi".) </p>
+	<br>
+	<form action="search_page.php" method="post" style="text-align: center; font-size: 1.8rem;">
+		The First Keyword:<br>
+		<input type="text" name="key1" value="Coke">
+		<br><br>
+		The Second Keyword:<br>
+		<input type="text" name="key2" value="Pepsi">
+		<br><br>
+		<input type="submit" value="Generate the comparison">
+		</form> 
+</main>
+
+<footer>
+	<p>Copyright © 2018-2019 FantasticFive </p>
+	<p> - All  rights reserved. </p>
+</footer>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- JavaScript-->
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+
 </html>
