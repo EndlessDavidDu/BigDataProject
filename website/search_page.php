@@ -4,7 +4,7 @@
 <!-- Basic info
 ================================================== -->
 <meta charset="utf-8"> 
-<title>Hot Spot Analysis Tool </title>
+<title>Difference Amplifier </title>
 <meta name="description" content="Processing">  
 <!-- favicons
 ================================================== -->
