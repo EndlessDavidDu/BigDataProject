@@ -31,17 +31,23 @@
 </header>
 
 <main>
-        <center>
+        <!-- <center>
         <p>Processing... Please Wait... </p >
-        <?php
+
+								echo "php is woring";
                 $key1 = $_REQUEST['key1'];
                 $key2 = $_REQUEST['key2'];
+								echo "php is working";
                 echo 'Your keywords are "' . $key1 .'" and "' . $key2 . '". ';
                 $val = shell_exec("python ./python/tweeter_api.py $key1 $key2");
                 echo $val;
-        ?>
-        </center>
+
+        </center> -->
+	<p>key1 : $key1 </p>
+	<p>key2 : $key2 </p>
+
 </main>
+
 
 <footer>
 	<p>Copyright © 2018-2019 FantasticFive </p>
@@ -60,6 +66,14 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+<script type="text/javascript">
+	var response = eval("("+ request.responseText + ")");
+	document.getElementById("key1").value = response.key1;
+	document.getElementById("key2").value = response.key2;
+  console.log(key1);
+	console.log(key2);
+</script>
 
 </body>
 

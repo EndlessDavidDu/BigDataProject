@@ -37,7 +37,7 @@
 	<p>To obtain a comparison, please input two keywords below. </p>
 	<p>(E.g. "Coke" and "Pepsi".) </p>
 	<br>
-	<form action=secondpage method="post" style="text-align: center; font-size: 1.8rem;">
+	<form id="form1" action=secondpage method="post" style="text-align: center; font-size: 1.8rem;">
 		{% csrf_token%}
 		The First Keyword:<br>
 		<input type="text" name="key1" value="Coke">
@@ -66,7 +66,34 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+				var key1 = $("input[name='key1']").val();
+				var key2 = $("input[name='key2']").val();
+				var formdata = new FormData();
 
+				formdata.append("key1",key1);
+				formdata.append("key2",key2);
+
+
+        function login() {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "secondpage" ,//url
+                data: formdata,
+                success: function (result) {
+                    console.log(result);
+                    if (result.resultCode == 200) {
+                        alert("SUCCESS");
+                    }
+                    ;
+                },
+                error : function() {
+                    alert("error");
+                }
+            });
+        }
+</script>
 </body>
 
 </html>
