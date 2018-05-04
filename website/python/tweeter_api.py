@@ -6,6 +6,7 @@ import requests
 import json
 from requests.auth import HTTPBasicAuth
 from pymongo import MongoClient
+from bson import json_util
 
 conn = MongoClient('localhost', 27017)
 db = conn.data_from_tweeter
@@ -24,7 +25,6 @@ MM = '00'
 toMM = '09'
 limit = 7
 count = 0
-
 
 for x in range(0, 7):
     temp_date = datetime.date.today() - datetime.timedelta(days=limit)
@@ -60,8 +60,12 @@ for x in range(0, 7):
             request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth(
                 'yadu3240@colorado.edu', '!gty19970721'))
 
-            firset.insert(request_Result1.json())
-            secset.insert(request_Result2.json())
+            #firset.insert(request_Result1.json())
+            #secset.insert(request_Result2.json())
+			data = json_util.loads(request_Result1.read())
+			firset.insert_many(data)
+			data = json_util.loads(request_Result2.read())
+			secset.insert_many(data)
 
             count = count + 2
             print(count)
