@@ -9,3 +9,7 @@ http://52.14.235.51/
  1. Need 'requests' module. To install: <br />
     path\easy_install.exe requests <br />
     i.e. C:\Python27\Scripts\easy_install.exe requests <br />
+
+ 2. Need 'pymongo' module. To install: <br />
+    path\easy_install.exe pymongo <br />
+    i.e. C:\Python27\Scripts\easy_install.exe pymongo <br />
