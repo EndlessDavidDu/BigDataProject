@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <!-- Basic info
+Credits: 
+
+1. Using NewSignature's U.S. map JQuery plugin for generating heatmaps. https://newsignature.github.io/us-map/
+
 ================================================== -->
 <meta charset="utf-8">
 <title>Difference Amplifier </title>

@@ -11,6 +11,8 @@ conn = MongoClient('localhost', 27017)
 db = conn.data_from_tweeter
 firset = db.fir
 secset = db.sec
+firset.remove({})
+secset.remove({})
 
 # Request thru GNIP API
 hashtag1 = sys.argv[1]
@@ -52,9 +54,13 @@ for x in range(0, 7):
             count = count + 1
             request_Result2 = requests.get(Sec_url, auth=HTTPBasicAuth('yadu3240@colorado.edu', '!gty19970721'))
             count = count + 1
-            
-            firset.insert_one(request_Result1.json())
-            secset.insert_one(request_Result2.json())
+
+            if(request_Result1.json().has_key('results')):
+                for record in request_Result1.json()['results']:
+                    firset.insert_one(record)
+            if(request_Result2.json().has_key('results')):
+                for record in request_Result2.json()['results']:
+                    secset.insert_one(record)
 
             print(count)
             mm = int(MM) + 10
