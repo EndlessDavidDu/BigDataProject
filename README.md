@@ -1,8 +1,8 @@
-# BigDataProject
-The project for big data class
+# BigDataProject - Difference Amplifier
+The project for BigData class. 
 
 Website Access for our project:
-http://52.14.235.51/
+http://52.14.235.51/ (out-of-date)
 
 ## Environment
 * Python
